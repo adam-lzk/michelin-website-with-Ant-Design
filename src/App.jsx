@@ -2,12 +2,12 @@ import styled from '@emotion/styled'
 import { Layout, Space } from 'antd'
 const { Header, Footer, Sider, Content } = Layout
 
-const StyledSpace = styled.Header`
+const StyledSpace = styled(Space)`
   width: 100%;
   margin: 0;
 `
 
-const StyledHeader = styled.Header`
+const StyledHeader = styled(Header)`
   font-family: Georgia;
   text-align: center;
   font-size: 30px;
@@ -18,7 +18,7 @@ const StyledHeader = styled.Header`
   background-color: #af2127;
 `
 
-const StyledContent = styled.Content`
+const StyledContent = styled(Content)`
   font-family: sans-serif;
   font-size: 16;
   min-height: 120;
@@ -28,7 +28,7 @@ const StyledContent = styled.Content`
   padding-bottom: 5;
 `
 
-const StyledSider = styled.Sider`
+const StyledSider = styled(Sider)`
   text-align: center;
   line-height: 90px;
   color: #000;
@@ -36,7 +36,7 @@ const StyledSider = styled.Sider`
   padding-top: 20;
 `
 
-const StyledFooter = styled.Footer`
+const StyledFooter = styled(Footer)`
   text-align: center;
   color: #fff;
   background-color: #af2127;
