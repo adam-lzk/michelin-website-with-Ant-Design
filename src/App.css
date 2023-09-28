@@ -1,0 +1,31 @@
+body {
+  margin: 0;
+}
+
+.header {
+  position: sticky;  /* from https://ant.design/components/layout#components-layout-demo-fixed */
+  top: 0;
+  z-index: 1;
+  background-color: white;
+}
+
+.content {
+  overflow: auto;
+  background-color: white;
+}
+
+/* - styles doesn't apply
+.sider {
+  height: calc(100% - 64px);
+  position: sticky;
+  top: 64px;
+}
+*/
+
+.footer {
+  background-color: #f4f4f4;
+}
+
+img {
+  width: 100%;
+}
