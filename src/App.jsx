@@ -1,5 +1,6 @@
 import { Layout, Menu } from 'antd'
-const { Header, Footer, Sider, Content } = Layout
+const { Header, Footer, Content } = Layout
+import { StyledSider } from './atoms.js'
 import './App.css'
 
 function App() {
@@ -7,14 +8,7 @@ function App() {
   <Layout>
     <Header className='header'>Khinkalnya</Header>
     <Layout>
-      <Sider
-        className='sider'
-        style={{
-          height: 'calc(100% - 64px)',  // viewport height minus header height
-          position: 'sticky',
-          top: '64px',
-        }}
-      >
+      <StyledSider className='sider'>
         <Menu
           className='menu'
           items={[
@@ -26,7 +20,7 @@ function App() {
             { key: "6", label: "Contacts" },
           ]}
         />
-      </Sider>
+      </StyledSider>
       <Content className='content'>
         <img
           src="../pictures/pict1.jpg"

@@ -14,14 +14,6 @@ body {
   background-color: white;
 }
 
-/* - styles doesn't apply
-.sider {
-  height: calc(100% - 64px);
-  position: sticky;
-  top: 64px;
-}
-*/
-
 .footer {
   background-color: #f4f4f4;
 }
