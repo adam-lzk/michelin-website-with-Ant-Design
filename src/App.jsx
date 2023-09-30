@@ -5,9 +5,9 @@ import './App.css'
 function App() {
   return (
   <Layout>
-    <StyledHeader className='header'>Khinkalnya</StyledHeader>
+    <StyledHeader>Khinkalnya</StyledHeader>
     <Layout>
-      <StyledSider className='sider'>
+      <StyledSider>
         <Menu
           className='menu'
           items={[
@@ -20,7 +20,7 @@ function App() {
           ]}
         />
       </StyledSider>
-      <StyledContent className='content'>
+      <StyledContent>
         <StyledImg
           src='../pictures/pict1.jpg'
           alt='Khinkali'
@@ -41,7 +41,7 @@ function App() {
         <p>Dear friends, we invite you to the family of Khinkalnya restaurants in your city — Minsk, Brest,
         Grodno, Mozyr, Soligorsk and Pinsk! Choose your favorite dishes in our menu, and we will serve them
         with we will prepare it with love, pack it well and bring it back. Hot, juicy, fragrant!</p>
-        <StyledFooter className='footer'>
+        <StyledFooter>
           <p>LLC &quot;Investment and quality restaurant&quot;, UNP 193475654, Address: Republic of Belarus,
           25b Filimonov str., Minsk, 220114, <br /> room 302-2, Certificate of state registration
           Registration No. 193475654 dated 07.10.2020 issued by the Minsk City Executive Committee, <br />
