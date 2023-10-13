@@ -7,7 +7,6 @@ import { JobOpenings } from './pages/JobOpenings'
 import { Payment } from './pages/Payment'
 import { Contacts } from './pages/Contacts'
 import { NotFoundPage } from './pages/NotFoundPage'
-import './App.css'
 
 function Router() {
   return (

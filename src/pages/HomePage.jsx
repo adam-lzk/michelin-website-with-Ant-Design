@@ -1,5 +1,4 @@
 import { StyledContent, StyledFooter, StyledImg } from '../atoms.js'
-import '../App.css'
 
 function HomePage() {
   return (
