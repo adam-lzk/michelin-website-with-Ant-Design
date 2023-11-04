@@ -1,7 +1,7 @@
 import { Routes, Route } from 'react-router-dom'
 import { PageLayout } from './components/PageLayout.jsx'
 import { HomePage } from './pages/HomePage'
-import { Restaurants } from './pages/Restaurants'
+import { RestaurantsPage } from './pages/Restaurants'
 import { Delivery } from './pages/Delivery'
 import { JobOpenings } from './pages/JobOpenings'
 import { Payment } from './pages/Payment'
@@ -13,7 +13,7 @@ function Router() {
     <Routes>
       <Route path='/' element={<PageLayout />}>
         <Route index element={<HomePage />} />
-        <Route path='restaurants' element={<Restaurants />} />
+        <Route path='restaurants' element={<RestaurantsPage />} />
         <Route path='delivery' element={<Delivery />} />
         <Route path='job-openings' element={<JobOpenings />} />
         <Route path='payment' element={<Payment />} />
