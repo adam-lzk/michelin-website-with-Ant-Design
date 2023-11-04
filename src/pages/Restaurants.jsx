@@ -116,17 +116,25 @@ const cardsData = [
 ]
 
 const CardDescription = ({ description, rating, priceRange, cuisine }) => {
+  const filledStarsCount = Math.round(rating)
+  const emptyStarsCount = 5 - Math.round(rating)
+
   return (
     <>
-      <p style={{height:'67px'}}>
-        {description}
-      </p>
+      <p style={{ height: "67px" }}>{description}</p>
       <p>
-        {Array(Math.round(rating)).fill(<StarFilled />).concat(Array(5 - Math.round(rating)).fill(<StarOutlined />))}
+        {Array(filledStarsCount).fill('').map((item, index) => (
+          <StarFilled key={`filled-${index}`} />
+        ))}
+        {Array(emptyStarsCount).fill('').map((item, index) => (
+          <StarOutlined key={`outlined-${index}`} />
+        ))}
         {/* to get an array of filled and outlined stars to represent the rating */}
       </p>
       <p>
-        {Array(priceRange).fill('€')} • {cuisine}
+        {Array(priceRange).fill('').map((item, index) => (
+          <span key={index.toString()}>€</span>
+        ))} • {cuisine}
         {/* to get an array of € to represent the price range */}
       </p>
     </>
@@ -170,4 +178,11 @@ export const RestaurantsPage = () => {
       />
     </StyledContent>
   )
+}
+
+CardDescription.propTypes={
+  description: () => null,
+  rating: () => null,
+  priceRange: () => null,
+  cuisine: () => null,
 }
