@@ -1,7 +1,7 @@
 import styled from '@emotion/styled'
-import { Layout } from 'antd'
+import { Card, Layout } from 'antd'
 
-const StyledSider = styled(Layout.Sider)`
+export const StyledSider = styled(Layout.Sider)`
   &&& {
     height: calc(100% - 64px);  // viewport height minus header height
     position: sticky;
@@ -9,24 +9,26 @@ const StyledSider = styled(Layout.Sider)`
   }
 `
 
-const StyledHeader = styled(Layout.Header)`
+export const StyledHeader = styled(Layout.Header)`
   position: sticky;  // from https://ant.design/components/layout#components-layout-demo-fixed
   top: 0;
   z-index: 1;
   background-color: white;
 `
 
-const StyledContent = styled(Layout.Content)`
+export const StyledContent = styled(Layout.Content)`
   overflow: auto;
   background-color: white;
 `
 
-const StyledFooter = styled(Layout.Footer)`
+export const StyledFooter = styled(Layout.Footer)`
   background-color: #f4f4f4;
 `
 
-const StyledImg = styled.img`
+export const StyledImg = styled.img`
   width: 100%;
 `
 
-export { StyledSider, StyledHeader, StyledContent, StyledFooter, StyledImg }
+export const StyledCard = styled(Card)`
+// margin: 10px;
+`
