@@ -6,6 +6,7 @@ const cardsData = [
   {
     title: 'Europejski Grill',
     description: 'Krakowskie Przedmieście 13, Warsaw, 00 071, Poland',
+    id: 1,
     rating: 4.3,  // of 5
     priceRange: 4,  // of 4
     cuisine: 'Polish',
@@ -15,6 +16,7 @@ const cardsData = [
   {
     title: 'Lore Bistroo',
     description: 'Peetri 12, Port Noblessner, Tallinn, 10415, Estonia',
+    id: 2,
     rating: 4.5,
     priceRange: 2,
     cuisine: 'Modern Cuisine',
@@ -24,6 +26,7 @@ const cardsData = [
   {
     title: '38',
     description: 'Olevimägi 9, Tallinn, 10123, Estonia',
+    id: 3,
     rating: 4.8,
     priceRange: 3,
     cuisine: 'Creative',
@@ -33,6 +36,7 @@ const cardsData = [
   {
     title: 'Koneser Grill',
     description: 'ul. Ząbkowska 29, Warsaw, 03 736, Poland',
+    id: 4,
     rating: 4.7,
     priceRange: 1,
     cuisine: 'Meats and Grills',
@@ -42,6 +46,7 @@ const cardsData = [
   {
     title: 'Dyletanci',
     description: 'ul. Rozbrat 44a, Warsaw, 00 419, Poland',
+    id: 5,
     rating: 4.6,
     priceRange: 3,
     cuisine: 'Modern Cuisine',
@@ -51,6 +56,7 @@ const cardsData = [
   {
     title: 'Muzealna',
     description: 'The National Museum, al. Jerozolimskie 3, Warsaw, 00 495, Poland',
+    id: 6,
     rating: 4.4,
     priceRange: 1,
     cuisine: 'Traditional Cuisine',
@@ -60,6 +66,7 @@ const cardsData = [
   {
     title: 'elixir by Dom Wódki',
     description: 'ul. Wierzbowa 9-11, Warsaw, 00 094, Poland',
+    id: 7,
     rating: 4.6,
     priceRange: 2,
     cuisine: 'Polish',
@@ -69,6 +76,7 @@ const cardsData = [
   {
     title: 'Nobu Warsaw',
     description: 'ul. Wilcza 73, Warsaw, 00 670, Poland',
+    id: 8,
     rating: 4.1,
     priceRange: 3,
     cuisine: 'Japanese',
@@ -78,6 +86,7 @@ const cardsData = [
   {
     title: 'Mantel ja Korsten',
     description: 'Poska 19a, Tallinn, 10216, Estonia',
+    id: 9,
     rating: 4.8,
     priceRange: 1,
     cuisine: 'Mediterranean Cuisine',
@@ -87,6 +96,7 @@ const cardsData = [
   {
     title: 'Artesse',
     description: 'ul. Św. Jana 15, Krakow, 31 017, Poland',
+    id: 10,
     rating: 4.8,
     priceRange: 3,
     cuisine: 'Creative',
@@ -96,6 +106,7 @@ const cardsData = [
   {
     title: 'Fiorentina',
     description: 'ul. Grodzka 63, Krakow, 31 044, Poland',
+    id: 11,
     rating: 4.7,
     priceRange: 3,
     cuisine: 'Creative',
@@ -135,8 +146,9 @@ export const RestaurantsPage = () => {
           column: xxl ? 5 : xl ? 4 : lg ? 3 : md ? 2 : sm ? 1 : xs ? 1 : 6,
         }}
         dataSource={cardsData}
+        rowKey={item => item.id.toString()}  // to uniquely identify an item in array
         renderItem={(item) => (
-          <List.Item key={item.title + item.description}>  {/* to uniquely identify an item in array */}
+          <List.Item>
             <StyledCard
               hoverable
               cover={<img alt={item.alt} src={item.src} />}
