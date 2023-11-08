@@ -1,36 +1,39 @@
 import { StyledContent, StyledFooter, StyledImg } from '../atoms.js'
 
-function HomePage() {
+export const HomePage = () => {
   return (
   <StyledContent>
+    <h1>Discover and book hotels and restaurants selected by the MICHELIN Guide</h1>
     <StyledImg
-      src='../pictures/pict1.jpg'
-      alt='Khinkali'
+      src='https://d3h1lg3ksw6i6b.cloudfront.net/media/image/2023/11/07/f2c8ca2c38274deea402e0257e349581_1196006_pro_4.jpg'
+      alt='dish'
     />
-    <h2>About us</h2>
-    <p>Khinkalnya is a family, here they cherish the recipes of their favorite dishes and cook only
-    the most delicious: khinkali with fragrant broth and juicy filling, khachapuri boats, warming
-    kharcho and tender chikhirtmu, spicy lula kebab and Georgian pkhali. And the most homely Napoleon!</p>
-    <p>In Khinkalna, as at home, you can celebrate the holiday with sparkling Badagoni and enjoy the usual
-    in the afternoon, under a glass of homemade Kakhetian wine. Gather the whole family at a large table
-    or appoint a meeting with a dear person, and just run in for a delicious lunch!</p>
+    <h2>About The MICHELIN Guide</h2>
     <StyledImg
-      src='../pictures/pict2.jpg'
-      alt='Khinkali'
+      src='https://axwwgrkdco.cloudimg.io/v7/__gmpics__/2f873996bd6549efa6c03cab58b3229e'
+      alt='dish'
     />
-    <p>Everyone is comfortable in Khinkalna: we have a children&apos;s menu and comfortable chairs,
-    as well as entertainment for the little guests, our genatsvalikov!</p>
-    <p>Dear friends, we invite you to the family of Khinkalnya restaurants in your city — Minsk, Brest,
-    Grodno, Mozyr, Soligorsk and Pinsk! Choose your favorite dishes in our menu, and we will serve them
-    with we will prepare it with love, pack it well and bring it back. Hot, juicy, fragrant!</p>
+    <h3>What is a Michelin Star?</h3>
+    <p>A Michelin Star is awarded to restaurants offering outstanding cooking. We take into account
+    five universal criteria: the quality of the ingredients, the harmony of flavours, the mastery of
+    techniques, the personality of the chef as expressed through their cuisine and, just as importantly,
+    consistency both across the entire menu and over time.</p>
+    <img
+      src='https://guide.michelin.com/assets/images/icons/michelin-star.svg'
+      alt='dish'
+    />
+    <h3>Are Michelin Stars annual awards?</h3>
+    <p>Yes. Along with seeking out new Stars, we continually reassess existing Star restaurants to
+    ensure the same high standard of cooking is being offered to guests.</p>
     <StyledFooter>
-      <p>LLC &quot;Investment and quality restaurant&quot;, UNP 193475654, Address: Republic of Belarus,
-      25b Filimonov str., Minsk, 220114, <br /> room 302-2, Certificate of state registration
-      Registration No. 193475654 dated 07.10.2020 issued by the Minsk City Executive Committee, <br />
-      Working hours: 12.00-23.00. tel./fax +375-17-389-70-40, e-mail: hinkalnainvesticii@gmail.com</p>
+      <img
+        src='https://guide.michelin.com/assets/images/Michelin-guide-vertical.svg'
+        alt='michelin'
+      />
+      <p>Copyright © 2023 MICHELIN Guide. All rights reserved.<br />
+        <a href="https://guide.michelin.com/en/terms-of-use">Terms of Use</a> • <a href="javascript:Didomi.preferences.show()">Cookies</a> • <a href="https://guide.michelin.com/en/privacy-policy">Privacy Policy</a> • <a href="https://guide.michelin.com/en/legal-notice">Legal Notice</a>
+      </p>
     </StyledFooter>
   </StyledContent>
   )
 }
-
-export { HomePage }
