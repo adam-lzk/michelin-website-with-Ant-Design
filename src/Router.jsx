@@ -2,10 +2,10 @@ import { Routes, Route } from 'react-router-dom'
 import { PageLayout } from './components/PageLayout.jsx'
 import { HomePage } from './pages/HomePage'
 import { RestaurantsPage } from './pages/Restaurants'
-import { Delivery } from './pages/Delivery'
-import { JobOpenings } from './pages/JobOpenings'
-import { Payment } from './pages/Payment'
-import { Contacts } from './pages/Contacts'
+import { HotelsPage } from './pages/Hotels'
+import { MagazinePage } from './pages/Magazine'
+import { FavoritesPage } from './pages/Favorites'
+import { ContactsPage } from './pages/Contacts'
 import { NotFoundPage } from './pages/NotFoundPage'
 
 function Router() {
@@ -14,10 +14,10 @@ function Router() {
       <Route path='/' element={<PageLayout />}>
         <Route index element={<HomePage />} />
         <Route path='restaurants' element={<RestaurantsPage />} />
-        <Route path='delivery' element={<Delivery />} />
-        <Route path='job-openings' element={<JobOpenings />} />
-        <Route path='payment' element={<Payment />} />
-        <Route path='contacts' element={<Contacts />} />
+        <Route path='hotels' element={<HotelsPage />} />
+        <Route path='magazine' element={<MagazinePage />} />
+        <Route path='favorites' element={<FavoritesPage />} />
+        <Route path='contacts' element={<ContactsPage />} />
         <Route path='*' element={<NotFoundPage />} />
       </Route>
     </Routes>
