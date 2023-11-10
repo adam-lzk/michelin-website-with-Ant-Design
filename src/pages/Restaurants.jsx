@@ -1,14 +1,7 @@
 import { StyledContent, StyledCard } from '../atoms.js'
 import { Card, Grid, List } from 'antd'
 import { StarFilled, StarOutlined } from '@ant-design/icons';
-
-let cardsData = []
-;(async () => {
-  const url = `http://localhost:8080/restaurants`
-  const response = await fetch(url)
-  cardsData = await response.json()
-  console.log(cardsData)
-})()
+import { useEffect, useState } from 'react';
 
 const CardDescription = ({ description, rating, priceRange, cuisine }) => {
   const filledStarsCount = Math.round(rating)
@@ -37,6 +30,19 @@ const CardDescription = ({ description, rating, priceRange, cuisine }) => {
 }
 
 export const RestaurantsPage = () => {
+  const [cardsData, setCardsData] = useState()
+
+  useEffect(() => {
+    const handleFetch = async () => {
+      const response = await fetch("http://localhost:8080/restaurants")
+      const result = await response.json()
+      setCardsData(result)
+    }
+    handleFetch()
+  }, [])
+
+  //console.log({ cardsData })
+
   const { xs, sm, md, lg, xl, xxl } = Grid.useBreakpoint()
   // xs[0, 575], sm[576, 767], md[768, 991], lg[992, 1199], xl[1200, 1599], xxl [1600, ...]
   // console.log(Grid.useBreakpoint())
