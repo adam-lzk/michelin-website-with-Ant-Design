@@ -30,7 +30,7 @@ const CardDescription = ({ description, rating, priceRange, cuisine }) => {
 }
 
 export const RestaurantsPage = () => {
-  const [cardsData, setCardsData] = useState()
+  const [cardsData, setCardsData] = useState([])
 
   useEffect(() => {
     const handleFetch = async () => {
