@@ -18,14 +18,36 @@ http.createServer((req, res) => {
     return
   }
 
-  console.log({ url: req.url })
-  console.log({ pathname: new URL(req.url, `http://${req.headers.host}`).pathname })
+  const newURL = new URL(req.url, `http://${req.headers.host}`)
+  //console.log({ url: req.url })
+  //console.log({ pathname: newURL.pathname })
+  //console.log({ 'newURL': newURL })
   // to check - curl "http://localhost:8080/restaurants?page=1&per_page=10"
 
-  if (new URL(req.url, `http://${req.headers.host}`).pathname === "/restaurants") {
-    res.setHeader("Content-Type", "application/json")
-    res.writeHead(200)
-    res.end(JSON.stringify(cardsData))
+  //console.log({ 'searchParams': newURL.searchParams })
+  //console.log({ 'searchParams.get(key)': newURL.searchParams.get('id') })
+
+  if (newURL.pathname === "/restaurants") {
+    if (newURL.searchParams.has('id')) {
+      const requiredCard = cardsData.filter(card => card.id.toString() === newURL.searchParams.get('id'))
+
+      if (requiredCard.length === 1) {
+        //console.log({ requiredCardID: requiredCard[0].id })
+        res.setHeader("Content-Type", "application/json")
+        res.writeHead(200)
+        res.end(JSON.stringify(requiredCard))
+      }
+      else {
+        res.setHeader("Content-Type", "text/html")
+        res.writeHead(404)
+        res.end("Not found")
+      }
+    }
+    else {
+      res.setHeader("Content-Type", "application/json")
+      res.writeHead(200)
+      res.end(JSON.stringify(cardsData))
+    }  // to check - curl "http://localhost:8080/restaurants?id=4"
   }
   else {
     res.setHeader("Content-Type", "text/html")
