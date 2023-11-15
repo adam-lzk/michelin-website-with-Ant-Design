@@ -1,5 +1,5 @@
 import http from 'http'
-import cardsData from './data.json' assert {type: 'json'};
+import restaurants from './data.json' assert {type: 'json'};
 
 const port = 8080
 
@@ -28,14 +28,16 @@ http.createServer((req, res) => {
   //console.log({ 'searchParams.get(key)': newURL.searchParams.get('id') })
 
   if (newURL.pathname === "/restaurants") {
-    if (newURL.searchParams.has('id')) {
-      const requiredCard = cardsData.filter(card => card.id.toString() === newURL.searchParams.get('id'))
+    const id = newURL.searchParams.get('id')
 
-      if (requiredCard.length === 1) {
-        //console.log({ requiredCardID: requiredCard[0].id })
+    if (id) {
+      const requiredRestaurant = restaurants.find(card => card.id.toString() === id)
+
+      if (requiredRestaurant) {
+        //console.log({ requiredRestaurantID: requiredRestaurant.id })
         res.setHeader("Content-Type", "application/json")
         res.writeHead(200)
-        res.end(JSON.stringify(requiredCard))
+        res.end(JSON.stringify([requiredRestaurant]))
       }
       else {
         res.setHeader("Content-Type", "text/html")
@@ -46,7 +48,7 @@ http.createServer((req, res) => {
     else {
       res.setHeader("Content-Type", "application/json")
       res.writeHead(200)
-      res.end(JSON.stringify(cardsData))
+      res.end(JSON.stringify(restaurants))
     }  // to check - curl "http://localhost:8080/restaurants?id=4"
   }
   else {
