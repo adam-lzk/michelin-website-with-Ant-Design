@@ -32,9 +32,13 @@ const CardDescription = ({ description, rating, priceRange, cuisine }) => {
 export const RestaurantsPage = () => {
   const [cardsData, setCardsData] = useState([])
 
+  const websitePort = window.location.port
+  const serverPort = '8080'
+  const url = window.location.href.replace(websitePort, serverPort)
+
   useEffect(() => {
     const handleFetch = async () => {
-      const response = await fetch("http://localhost:8080/restaurants")
+      const response = await fetch(url)
       const result = await response.json()
       setCardsData(result)
     }
